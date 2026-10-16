@@ -1,0 +1,11 @@
+# Third-party / downloaded (see README.md: re-extract from archives or the release page)
+maelstrom/
+archives/
+
+# Raw Maelstrom runs (large); the cited runs are copied to lab1/runs/
+store/
+
+# Python / editor
+__pycache__/
+*.pyc
+.vscode/

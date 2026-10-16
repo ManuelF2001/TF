@@ -1,0 +1,317 @@
+DEBUG:root:received {"id":0,"src":"c0","dest":"n2","body":{"type":"init","node_id":"n2","node_ids":["n0","n1","n2"],"msg_id":1}}
+INFO:root:node n2 initialized
+DEBUG:root:sending {"dest": "c0", "src": "n2", "body": {"msg_id": 1, "in_reply_to": 1, "type": "init_ok"}}
+DEBUG:root:received {"id":10,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":1}}
+TRACE {"t": 1792170102.459511, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 2, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":12,"src":"n0","dest":"n2","body":{"msg_id":4,"in_reply_to":2,"type":"error","code":20,"text":"key does not exist"}}
+TRACE {"t": 1792170102.462193, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "error"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 3, "in_reply_to": 1, "type": "error", "code": 20, "text": "key does not exist"}}
+DEBUG:root:received {"id":24,"src":"n0","dest":"n2","body":{"msg_id":9,"type":"update","key":0,"value":3}}
+TRACE {"t": 1792170102.559428, "node": "n2", "event": "apply", "key": 0, "value": 3}
+DEBUG:root:received {"id":28,"src":"n0","dest":"n2","body":{"msg_id":12,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170102.718049, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":34,"src":"n0","dest":"n2","body":{"msg_id":15,"type":"update","key":0,"value":3}}
+TRACE {"t": 1792170102.766401, "node": "n2", "event": "apply", "key": 0, "value": 3}
+DEBUG:root:received {"id":40,"src":"n0","dest":"n2","body":{"msg_id":19,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170102.914184, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":45,"src":"n0","dest":"n2","body":{"msg_id":22,"type":"update","key":0,"value":3}}
+TRACE {"t": 1792170103.085574, "node": "n2", "event": "apply", "key": 0, "value": 3}
+DEBUG:root:received {"id":52,"src":"n0","dest":"n2","body":{"msg_id":26,"type":"update","key":0,"value":1}}
+TRACE {"t": 1792170103.337794, "node": "n2", "event": "apply", "key": 0, "value": 1}
+DEBUG:root:received {"id":58,"src":"n0","dest":"n2","body":{"msg_id":30,"type":"update","key":0,"value":1}}
+TRACE {"t": 1792170103.462025, "node": "n2", "event": "apply", "key": 0, "value": 1}
+DEBUG:root:received {"id":67,"src":"n0","dest":"n2","body":{"msg_id":35,"type":"update","key":0,"value":1}}
+TRACE {"t": 1792170103.814354, "node": "n2", "event": "apply", "key": 0, "value": 1}
+DEBUG:root:received {"id":78,"src":"n0","dest":"n2","body":{"msg_id":41,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170104.171512, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":80,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":2}}
+TRACE {"t": 1792170104.290982, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 4, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":82,"src":"n0","dest":"n2","body":{"msg_id":43,"in_reply_to":4,"type":"read_ok","value":4}}
+TRACE {"t": 1792170104.293201, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 5, "in_reply_to": 2, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":88,"src":"c11","dest":"n2","body":{"key":0,"from":1,"to":2,"type":"cas","msg_id":1}}
+TRACE {"t": 1792170104.620755, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 6, "key": 0, "from": 1, "to": 2, "type": "cas"}}
+DEBUG:root:received {"id":90,"src":"n0","dest":"n2","body":{"msg_id":46,"in_reply_to":6,"type":"error","code":22,"text":"expected 1, found 4"}}
+TRACE {"t": 1792170104.622721, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 7, "in_reply_to": 1, "type": "error", "code": 22, "text": "expected 1, found 4"}}
+DEBUG:root:received {"id":98,"src":"n0","dest":"n2","body":{"msg_id":50,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170105.130403, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":100,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":3}}
+TRACE {"t": 1792170105.29926, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 8, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":102,"src":"n0","dest":"n2","body":{"msg_id":52,"in_reply_to":8,"type":"read_ok","value":0}}
+TRACE {"t": 1792170105.301438, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 9, "in_reply_to": 3, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":114,"src":"n0","dest":"n2","body":{"msg_id":58,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170106.063483, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":120,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":4}}
+TRACE {"t": 1792170106.287235, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 10, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":122,"src":"n0","dest":"n2","body":{"msg_id":61,"in_reply_to":10,"type":"read_ok","value":0}}
+TRACE {"t": 1792170106.28951, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 11, "in_reply_to": 4, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":128,"src":"c11","dest":"n2","body":{"key":0,"value":2,"type":"write","msg_id":2}}
+TRACE {"t": 1792170106.769231, "node": "n2", "event": "forward", "key": 0, "op": "write", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 12, "key": 0, "value": 2, "type": "write"}}
+DEBUG:root:received {"id":131,"src":"n0","dest":"n2","body":{"msg_id":65,"type":"update","key":0,"value":2}}
+DEBUG:root:received {"id":132,"src":"n0","dest":"n2","body":{"msg_id":66,"in_reply_to":12,"type":"write_ok"}}
+TRACE {"t": 1792170106.771659, "node": "n2", "event": "apply", "key": 0, "value": 2}
+TRACE {"t": 1792170106.77187, "node": "n2", "event": "relay", "key": 0, "op": "write", "client": "c11", "result": "write_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 13, "in_reply_to": 2, "type": "write_ok"}}
+DEBUG:root:received {"id":140,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":5}}
+TRACE {"t": 1792170107.112172, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 14, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":142,"src":"n0","dest":"n2","body":{"msg_id":70,"in_reply_to":14,"type":"read_ok","value":2}}
+TRACE {"t": 1792170107.120708, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 15, "in_reply_to": 5, "type": "read_ok", "value": 2}}
+DEBUG:root:received {"id":149,"src":"n0","dest":"n2","body":{"msg_id":73,"type":"update","key":0,"value":2}}
+TRACE {"t": 1792170107.179922, "node": "n2", "event": "apply", "key": 0, "value": 2}
+DEBUG:root:received {"id":152,"src":"c11","dest":"n2","body":{"key":0,"from":2,"to":2,"type":"cas","msg_id":3}}
+TRACE {"t": 1792170107.273028, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 16, "key": 0, "from": 2, "to": 2, "type": "cas"}}
+DEBUG:root:received {"id":155,"src":"n0","dest":"n2","body":{"msg_id":76,"type":"update","key":0,"value":2}}
+DEBUG:root:received {"id":156,"src":"n0","dest":"n2","body":{"msg_id":77,"in_reply_to":16,"type":"cas_ok"}}
+TRACE {"t": 1792170107.274752, "node": "n2", "event": "apply", "key": 0, "value": 2}
+TRACE {"t": 1792170107.275002, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "cas_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 17, "in_reply_to": 3, "type": "cas_ok"}}
+DEBUG:root:received {"id":160,"src":"n0","dest":"n2","body":{"msg_id":79,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170107.321593, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":169,"src":"n0","dest":"n2","body":{"msg_id":84,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170107.769055, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":173,"src":"c11","dest":"n2","body":{"key":0,"from":2,"to":4,"type":"cas","msg_id":4}}
+TRACE {"t": 1792170108.050431, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 18, "key": 0, "from": 2, "to": 4, "type": "cas"}}
+DEBUG:root:received {"id":175,"src":"n0","dest":"n2","body":{"msg_id":87,"in_reply_to":18,"type":"error","code":22,"text":"expected 2, found 4"}}
+TRACE {"t": 1792170108.051916, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 19, "in_reply_to": 4, "type": "error", "code": 22, "text": "expected 2, found 4"}}
+DEBUG:root:received {"id":181,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":6}}
+TRACE {"t": 1792170108.508408, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 20, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":183,"src":"n0","dest":"n2","body":{"msg_id":90,"in_reply_to":20,"type":"read_ok","value":4}}
+TRACE {"t": 1792170108.509849, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 21, "in_reply_to": 6, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":197,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":7}}
+TRACE {"t": 1792170108.961212, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 22, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":199,"src":"n0","dest":"n2","body":{"msg_id":96,"in_reply_to":22,"type":"read_ok","value":4}}
+TRACE {"t": 1792170108.963224, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 23, "in_reply_to": 7, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":222,"src":"n0","dest":"n2","body":{"msg_id":107,"type":"update","key":0,"value":1}}
+TRACE {"t": 1792170109.953334, "node": "n2", "event": "apply", "key": 0, "value": 1}
+DEBUG:root:received {"id":226,"src":"n0","dest":"n2","body":{"msg_id":110,"type":"update","key":0,"value":2}}
+TRACE {"t": 1792170110.071364, "node": "n2", "event": "apply", "key": 0, "value": 2}
+DEBUG:root:received {"id":229,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":8}}
+TRACE {"t": 1792170110.378424, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 24, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":231,"src":"n0","dest":"n2","body":{"msg_id":112,"in_reply_to":24,"type":"read_ok","value":2}}
+TRACE {"t": 1792170110.379763, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 25, "in_reply_to": 8, "type": "read_ok", "value": 2}}
+DEBUG:root:received {"id":237,"src":"c11","dest":"n2","body":{"key":0,"from":3,"to":0,"type":"cas","msg_id":5}}
+TRACE {"t": 1792170110.690846, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 26, "key": 0, "from": 3, "to": 0, "type": "cas"}}
+DEBUG:root:received {"id":239,"src":"n0","dest":"n2","body":{"msg_id":115,"in_reply_to":26,"type":"error","code":22,"text":"expected 3, found 2"}}
+TRACE {"t": 1792170110.692369, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 27, "in_reply_to": 5, "type": "error", "code": 22, "text": "expected 3, found 2"}}
+DEBUG:root:received {"id":245,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":9}}
+TRACE {"t": 1792170110.914676, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 28, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":247,"src":"n0","dest":"n2","body":{"msg_id":118,"in_reply_to":28,"type":"read_ok","value":2}}
+TRACE {"t": 1792170110.916344, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 29, "in_reply_to": 9, "type": "read_ok", "value": 2}}
+DEBUG:root:received {"id":251,"src":"n0","dest":"n2","body":{"msg_id":120,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170111.088353, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":255,"src":"n0","dest":"n2","body":{"msg_id":123,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170111.091848, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":258,"src":"c11","dest":"n2","body":{"key":0,"from":4,"to":0,"type":"cas","msg_id":6}}
+TRACE {"t": 1792170111.319125, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 30, "key": 0, "from": 4, "to": 0, "type": "cas"}}
+DEBUG:root:received {"id":260,"src":"n0","dest":"n2","body":{"msg_id":125,"in_reply_to":30,"type":"error","code":22,"text":"expected 4, found 0"}}
+TRACE {"t": 1792170111.321295, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 31, "in_reply_to": 6, "type": "error", "code": 22, "text": "expected 4, found 0"}}
+DEBUG:root:received {"id":270,"src":"n0","dest":"n2","body":{"msg_id":130,"type":"update","key":0,"value":2}}
+TRACE {"t": 1792170111.618208, "node": "n2", "event": "apply", "key": 0, "value": 2}
+DEBUG:root:received {"id":274,"src":"c11","dest":"n2","body":{"key":0,"value":3,"type":"write","msg_id":7}}
+TRACE {"t": 1792170111.821487, "node": "n2", "event": "forward", "key": 0, "op": "write", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 32, "key": 0, "value": 3, "type": "write"}}
+DEBUG:root:received {"id":277,"src":"n0","dest":"n2","body":{"msg_id":134,"type":"update","key":0,"value":3}}
+DEBUG:root:received {"id":278,"src":"n0","dest":"n2","body":{"msg_id":135,"in_reply_to":32,"type":"write_ok"}}
+TRACE {"t": 1792170111.823248, "node": "n2", "event": "apply", "key": 0, "value": 3}
+TRACE {"t": 1792170111.823448, "node": "n2", "event": "relay", "key": 0, "op": "write", "client": "c11", "result": "write_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 33, "in_reply_to": 7, "type": "write_ok"}}
+DEBUG:root:received {"id":284,"src":"n0","dest":"n2","body":{"msg_id":138,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170111.998542, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":290,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":10}}
+TRACE {"t": 1792170112.274235, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 34, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":292,"src":"n0","dest":"n2","body":{"msg_id":142,"in_reply_to":34,"type":"read_ok","value":4}}
+TRACE {"t": 1792170112.276066, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 35, "in_reply_to": 10, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":297,"src":"c11","dest":"n2","body":{"key":0,"value":3,"type":"write","msg_id":8}}
+TRACE {"t": 1792170112.504298, "node": "n2", "event": "forward", "key": 0, "op": "write", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 36, "key": 0, "value": 3, "type": "write"}}
+DEBUG:root:received {"id":300,"src":"n0","dest":"n2","body":{"msg_id":145,"type":"update","key":0,"value":3}}
+DEBUG:root:received {"id":301,"src":"n0","dest":"n2","body":{"msg_id":146,"in_reply_to":36,"type":"write_ok"}}
+TRACE {"t": 1792170112.506021, "node": "n2", "event": "apply", "key": 0, "value": 3}
+TRACE {"t": 1792170112.506237, "node": "n2", "event": "relay", "key": 0, "op": "write", "client": "c11", "result": "write_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 37, "in_reply_to": 8, "type": "write_ok"}}
+DEBUG:root:received {"id":308,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":11}}
+TRACE {"t": 1792170112.982385, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 38, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":310,"src":"n0","dest":"n2","body":{"msg_id":149,"in_reply_to":38,"type":"read_ok","value":3}}
+TRACE {"t": 1792170112.983899, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 39, "in_reply_to": 11, "type": "read_ok", "value": 3}}
+DEBUG:root:received {"id":322,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":12}}
+TRACE {"t": 1792170113.292185, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 40, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":324,"src":"n0","dest":"n2","body":{"msg_id":155,"in_reply_to":40,"type":"read_ok","value":3}}
+TRACE {"t": 1792170113.293894, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 41, "in_reply_to": 12, "type": "read_ok", "value": 3}}
+DEBUG:root:received {"id":326,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":13}}
+TRACE {"t": 1792170113.380262, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 42, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":328,"src":"n0","dest":"n2","body":{"msg_id":156,"in_reply_to":42,"type":"read_ok","value":3}}
+TRACE {"t": 1792170113.381786, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 43, "in_reply_to": 13, "type": "read_ok", "value": 3}}
+DEBUG:root:received {"id":333,"src":"c11","dest":"n2","body":{"key":0,"from":3,"to":4,"type":"cas","msg_id":9}}
+TRACE {"t": 1792170113.71765, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 44, "key": 0, "from": 3, "to": 4, "type": "cas"}}
+DEBUG:root:received {"id":336,"src":"n0","dest":"n2","body":{"msg_id":159,"type":"update","key":0,"value":4}}
+DEBUG:root:received {"id":337,"src":"n0","dest":"n2","body":{"msg_id":160,"in_reply_to":44,"type":"cas_ok"}}
+TRACE {"t": 1792170113.719438, "node": "n2", "event": "apply", "key": 0, "value": 4}
+TRACE {"t": 1792170113.719635, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "cas_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 45, "in_reply_to": 9, "type": "cas_ok"}}
+DEBUG:root:received {"id":345,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":14}}
+TRACE {"t": 1792170114.019249, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 46, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":347,"src":"n0","dest":"n2","body":{"msg_id":164,"in_reply_to":46,"type":"read_ok","value":4}}
+TRACE {"t": 1792170114.020972, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 47, "in_reply_to": 14, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":351,"src":"c11","dest":"n2","body":{"key":0,"from":4,"to":1,"type":"cas","msg_id":10}}
+TRACE {"t": 1792170114.240126, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 48, "key": 0, "from": 4, "to": 1, "type": "cas"}}
+DEBUG:root:received {"id":354,"src":"n0","dest":"n2","body":{"msg_id":167,"type":"update","key":0,"value":1}}
+DEBUG:root:received {"id":355,"src":"n0","dest":"n2","body":{"msg_id":168,"in_reply_to":48,"type":"cas_ok"}}
+TRACE {"t": 1792170114.242251, "node": "n2", "event": "apply", "key": 0, "value": 1}
+TRACE {"t": 1792170114.242333, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "cas_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 49, "in_reply_to": 10, "type": "cas_ok"}}
+DEBUG:root:received {"id":357,"src":"c11","dest":"n2","body":{"key":0,"value":4,"type":"write","msg_id":11}}
+TRACE {"t": 1792170114.29807, "node": "n2", "event": "forward", "key": 0, "op": "write", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 50, "key": 0, "value": 4, "type": "write"}}
+DEBUG:root:received {"id":360,"src":"n0","dest":"n2","body":{"msg_id":170,"type":"update","key":0,"value":4}}
+DEBUG:root:received {"id":361,"src":"n0","dest":"n2","body":{"msg_id":171,"in_reply_to":50,"type":"write_ok"}}
+TRACE {"t": 1792170114.300456, "node": "n2", "event": "apply", "key": 0, "value": 4}
+TRACE {"t": 1792170114.30066, "node": "n2", "event": "relay", "key": 0, "op": "write", "client": "c11", "result": "write_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 51, "in_reply_to": 11, "type": "write_ok"}}
+DEBUG:root:received {"id":367,"src":"n0","dest":"n2","body":{"msg_id":174,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170114.484302, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":371,"src":"n0","dest":"n2","body":{"msg_id":177,"type":"update","key":0,"value":3}}
+TRACE {"t": 1792170114.577672, "node": "n2", "event": "apply", "key": 0, "value": 3}
+DEBUG:root:received {"id":375,"src":"n0","dest":"n2","body":{"msg_id":180,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170114.634446, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":389,"src":"n0","dest":"n2","body":{"msg_id":188,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170114.98977, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":391,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":15}}
+TRACE {"t": 1792170115.090785, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 52, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":393,"src":"n0","dest":"n2","body":{"msg_id":190,"in_reply_to":52,"type":"read_ok","value":4}}
+TRACE {"t": 1792170115.092412, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 53, "in_reply_to": 15, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":402,"src":"n0","dest":"n2","body":{"msg_id":194,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170115.330188, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":407,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":16}}
+TRACE {"t": 1792170115.673134, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 54, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":409,"src":"n0","dest":"n2","body":{"msg_id":197,"in_reply_to":54,"type":"read_ok","value":4}}
+TRACE {"t": 1792170115.674812, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 55, "in_reply_to": 16, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":415,"src":"c11","dest":"n2","body":{"key":0,"value":3,"type":"write","msg_id":12}}
+TRACE {"t": 1792170116.108048, "node": "n2", "event": "forward", "key": 0, "op": "write", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 56, "key": 0, "value": 3, "type": "write"}}
+DEBUG:root:received {"id":418,"src":"n0","dest":"n2","body":{"msg_id":201,"type":"update","key":0,"value":3}}
+DEBUG:root:received {"id":419,"src":"n0","dest":"n2","body":{"msg_id":202,"in_reply_to":56,"type":"write_ok"}}
+TRACE {"t": 1792170116.109751, "node": "n2", "event": "apply", "key": 0, "value": 3}
+TRACE {"t": 1792170116.109888, "node": "n2", "event": "relay", "key": 0, "op": "write", "client": "c11", "result": "write_ok"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 57, "in_reply_to": 12, "type": "write_ok"}}
+DEBUG:root:received {"id":427,"src":"n0","dest":"n2","body":{"msg_id":206,"type":"update","key":0,"value":4}}
+TRACE {"t": 1792170116.459403, "node": "n2", "event": "apply", "key": 0, "value": 4}
+DEBUG:root:received {"id":429,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":17}}
+TRACE {"t": 1792170116.652113, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 58, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":431,"src":"n0","dest":"n2","body":{"msg_id":208,"in_reply_to":58,"type":"read_ok","value":4}}
+TRACE {"t": 1792170116.653548, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 59, "in_reply_to": 17, "type": "read_ok", "value": 4}}
+DEBUG:root:received {"id":435,"src":"n0","dest":"n2","body":{"msg_id":210,"type":"update","key":0,"value":3}}
+TRACE {"t": 1792170116.801808, "node": "n2", "event": "apply", "key": 0, "value": 3}
+DEBUG:root:received {"id":445,"src":"n0","dest":"n2","body":{"msg_id":216,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170117.048064, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":448,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":18}}
+TRACE {"t": 1792170117.128364, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 60, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":450,"src":"n0","dest":"n2","body":{"msg_id":218,"in_reply_to":60,"type":"read_ok","value":0}}
+TRACE {"t": 1792170117.129659, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 61, "in_reply_to": 18, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":467,"src":"c11","dest":"n2","body":{"key":0,"from":3,"to":0,"type":"cas","msg_id":13}}
+TRACE {"t": 1792170118.164137, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 62, "key": 0, "from": 3, "to": 0, "type": "cas"}}
+DEBUG:root:received {"id":471,"src":"n0","dest":"n2","body":{"msg_id":227,"in_reply_to":62,"type":"error","code":22,"text":"expected 3, found 0"}}
+TRACE {"t": 1792170118.165294, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 63, "in_reply_to": 13, "type": "error", "code": 22, "text": "expected 3, found 0"}}
+DEBUG:root:received {"id":478,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":19}}
+TRACE {"t": 1792170118.586616, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 64, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":480,"src":"n0","dest":"n2","body":{"msg_id":230,"in_reply_to":64,"type":"read_ok","value":0}}
+TRACE {"t": 1792170118.588117, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 65, "in_reply_to": 19, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":491,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":20}}
+TRACE {"t": 1792170118.741641, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 66, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":493,"src":"n0","dest":"n2","body":{"msg_id":235,"in_reply_to":66,"type":"read_ok","value":0}}
+TRACE {"t": 1792170118.742858, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 67, "in_reply_to": 20, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":499,"src":"n0","dest":"n2","body":{"msg_id":238,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170119.049307, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":501,"src":"c11","dest":"n2","body":{"key":0,"from":1,"to":4,"type":"cas","msg_id":14}}
+TRACE {"t": 1792170119.097017, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 68, "key": 0, "from": 1, "to": 4, "type": "cas"}}
+DEBUG:root:received {"id":503,"src":"n0","dest":"n2","body":{"msg_id":240,"in_reply_to":68,"type":"error","code":22,"text":"expected 1, found 0"}}
+TRACE {"t": 1792170119.098452, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 69, "in_reply_to": 14, "type": "error", "code": 22, "text": "expected 1, found 0"}}
+DEBUG:root:received {"id":514,"src":"n0","dest":"n2","body":{"msg_id":245,"type":"update","key":0,"value":2}}
+TRACE {"t": 1792170119.674145, "node": "n2", "event": "apply", "key": 0, "value": 2}
+DEBUG:root:received {"id":520,"src":"c11","dest":"n2","body":{"key":0,"from":0,"to":0,"type":"cas","msg_id":15}}
+TRACE {"t": 1792170120.054858, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 70, "key": 0, "from": 0, "to": 0, "type": "cas"}}
+DEBUG:root:received {"id":524,"src":"n0","dest":"n2","body":{"msg_id":250,"in_reply_to":70,"type":"error","code":22,"text":"expected 0, found 2"}}
+TRACE {"t": 1792170120.056412, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 71, "in_reply_to": 15, "type": "error", "code": 22, "text": "expected 0, found 2"}}
+DEBUG:root:received {"id":530,"src":"n0","dest":"n2","body":{"msg_id":253,"type":"update","key":0,"value":0}}
+TRACE {"t": 1792170120.313216, "node": "n2", "event": "apply", "key": 0, "value": 0}
+DEBUG:root:received {"id":532,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":21}}
+TRACE {"t": 1792170120.39962, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 72, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":534,"src":"n0","dest":"n2","body":{"msg_id":255,"in_reply_to":72,"type":"read_ok","value":0}}
+TRACE {"t": 1792170120.400868, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 73, "in_reply_to": 21, "type": "read_ok", "value": 0}}
+DEBUG:root:received {"id":538,"src":"n0","dest":"n2","body":{"msg_id":257,"type":"update","key":0,"value":2}}
+TRACE {"t": 1792170120.483493, "node": "n2", "event": "apply", "key": 0, "value": 2}
+DEBUG:root:received {"id":549,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":22}}
+TRACE {"t": 1792170121.326524, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 74, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":551,"src":"n0","dest":"n2","body":{"msg_id":263,"in_reply_to":74,"type":"read_ok","value":2}}
+TRACE {"t": 1792170121.327886, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 75, "in_reply_to": 22, "type": "read_ok", "value": 2}}
+DEBUG:root:received {"id":556,"src":"c11","dest":"n2","body":{"key":0,"from":1,"to":0,"type":"cas","msg_id":16}}
+TRACE {"t": 1792170121.726177, "node": "n2", "event": "forward", "key": 0, "op": "cas", "client": "c11"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 76, "key": 0, "from": 1, "to": 0, "type": "cas"}}
+DEBUG:root:received {"id":558,"src":"n0","dest":"n2","body":{"msg_id":265,"in_reply_to":76,"type":"error","code":22,"text":"expected 1, found 2"}}
+TRACE {"t": 1792170121.727749, "node": "n2", "event": "relay", "key": 0, "op": "cas", "client": "c11", "result": "error"}
+DEBUG:root:sending {"dest": "c11", "src": "n2", "body": {"msg_id": 77, "in_reply_to": 16, "type": "error", "code": 22, "text": "expected 1, found 2"}}
+DEBUG:root:received {"id":564,"src":"c8","dest":"n2","body":{"key":0,"type":"read","msg_id":23}}
+TRACE {"t": 1792170121.990848, "node": "n2", "event": "forward", "key": 0, "op": "read", "client": "c8"}
+DEBUG:root:sending {"dest": "n0", "src": "n2", "body": {"msg_id": 78, "key": 0, "type": "read"}}
+DEBUG:root:received {"id":566,"src":"n0","dest":"n2","body":{"msg_id":268,"in_reply_to":78,"type":"read_ok","value":2}}
+TRACE {"t": 1792170121.992174, "node": "n2", "event": "relay", "key": 0, "op": "read", "client": "c8", "result": "read_ok"}
+DEBUG:root:sending {"dest": "c8", "src": "n2", "body": {"msg_id": 79, "in_reply_to": 23, "type": "read_ok", "value": 2}}

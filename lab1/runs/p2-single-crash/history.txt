@@ -1,0 +1,146 @@
+1	:invoke	:write	[0 0]
+1	:ok	:write	[0 0]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+1	:invoke	:write	[0 3]
+1	:ok	:write	[0 3]
+1	:invoke	:cas	[0 [0 2]]
+1	:fail	:cas	[0 [0 2]]	[:precondition-failed expected 0, found 3]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 3]
+1	:invoke	:write	[0 1]
+1	:ok	:write	[0 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+1	:invoke	:write	[0 2]
+1	:ok	:write	[0 2]
+1	:invoke	:cas	[0 [2 2]]
+1	:ok	:cas	[0 [2 2]]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 2]
+1	:invoke	:write	[0 4]
+1	:ok	:write	[0 4]
+1	:invoke	:write	[0 4]
+1	:ok	:write	[0 4]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 4]
+1	:invoke	:cas	[0 [2 0]]
+1	:fail	:cas	[0 [2 0]]	[:precondition-failed expected 2, found 4]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 4]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 4]
+1	:invoke	:cas	[0 [2 0]]
+1	:fail	:cas	[0 [2 0]]	[:precondition-failed expected 2, found 4]
+1	:invoke	:write	[0 1]
+1	:ok	:write	[0 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+1	:invoke	:cas	[0 [0 1]]
+1	:fail	:cas	[0 [0 1]]	[:precondition-failed expected 0, found 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+1	:invoke	:cas	[0 [1 1]]
+1	:ok	:cas	[0 [1 1]]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+1	:invoke	:cas	[0 [4 3]]
+1	:fail	:cas	[0 [4 3]]	[:precondition-failed expected 4, found 1]
+1	:invoke	:cas	[0 [3 4]]
+1	:fail	:cas	[0 [3 4]]	[:precondition-failed expected 3, found 1]
+1	:invoke	:cas	[0 [4 2]]
+1	:fail	:cas	[0 [4 2]]	[:precondition-failed expected 4, found 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+1	:invoke	:cas	[0 [0 1]]
+1	:fail	:cas	[0 [0 1]]	[:precondition-failed expected 0, found 1]
+1	:invoke	:cas	[0 [0 1]]
+1	:fail	:cas	[0 [0 1]]	[:precondition-failed expected 0, found 1]
+1	:invoke	:write	[0 1]
+1	:ok	:write	[0 1]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 1]
+1	:invoke	:write	[0 0]
+1	:ok	:write	[0 0]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+1	:invoke	:write	[0 0]
+1	:ok	:write	[0 0]
+1	:invoke	:write	[0 0]
+1	:ok	:write	[0 0]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+1	:invoke	:cas	[0 [4 4]]
+1	:fail	:cas	[0 [4 4]]	[:precondition-failed expected 4, found 0]
+0	:invoke	:read	[0 nil]
+0	:ok	:read	[0 0]
+1	:invoke	:write	[0 0]
+0	:invoke	:read	[0 nil]
+1	:info	:write	[0 0]	:net-timeout
+3	:invoke	:cas	[0 [2 0]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+3	:info	:cas	[0 [2 0]]	:net-timeout
+5	:invoke	:cas	[0 [4 2]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+5	:info	:cas	[0 [4 2]]	:net-timeout
+7	:invoke	:write	[0 1]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+7	:info	:write	[0 1]	:net-timeout
+9	:invoke	:cas	[0 [3 2]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+9	:info	:cas	[0 [3 2]]	:net-timeout
+11	:invoke	:cas	[0 [0 3]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+11	:info	:cas	[0 [0 3]]	:net-timeout
+13	:invoke	:write	[0 0]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+13	:info	:write	[0 0]	:net-timeout
+15	:invoke	:cas	[0 [0 0]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+15	:info	:cas	[0 [0 0]]	:net-timeout
+17	:invoke	:cas	[0 [4 2]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+17	:info	:cas	[0 [4 2]]	:net-timeout
+19	:invoke	:cas	[0 [4 1]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+19	:info	:cas	[0 [4 1]]	:net-timeout
+21	:invoke	:cas	[0 [4 1]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+21	:info	:cas	[0 [4 1]]	:net-timeout
+23	:invoke	:cas	[0 [2 1]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+23	:info	:cas	[0 [2 1]]	:net-timeout
+25	:invoke	:cas	[0 [4 3]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+25	:info	:cas	[0 [4 3]]	:net-timeout
+27	:invoke	:cas	[0 [0 4]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+27	:info	:cas	[0 [0 4]]	:net-timeout
+29	:invoke	:cas	[0 [2 0]]
+0	:fail	:read	[0 nil]	:net-timeout
+0	:invoke	:read	[0 nil]
+29	:info	:cas	[0 [2 0]]	:net-timeout
+0	:fail	:read	[0 nil]	:net-timeout
