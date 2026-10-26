@@ -47,7 +47,9 @@ lab1/
 │   ├── 05-explain-execution.md  Part 5 – one execution explained, revised claim
 │   ├── 06-compare.md        Part 6 – class table and discussion questions
 │   ├── 07-exit-record.md    Exit record (four lines)
-│   └── ai-log.md            AI log (deliverable item 5)
+│   ├── ai-log.md            AI log (deliverable item 5)
+│   └── explained/           in-depth explanation: theory, Maelstrom, every line
+│                            of ms.py / kv.py / d.py / scripts, results, exam prep
 ├── record/
 │   ├── record.tex           the filled-in lab record (2 pages)
 │   └── record.pdf           compiled
@@ -59,6 +61,8 @@ lab1/
 ```
 
 Suggested reading order: `theory.md` → `00` … `07` → `code.md`.
+For the full, slow explanation (theory to every line of code), start at
+`docs/explained/README.md`.
 
 ## Running
 
